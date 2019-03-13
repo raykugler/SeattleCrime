@@ -1,0 +1,43 @@
+.header{
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.title{
+grid-column: 1/-1;
+grid-row: 1/-1;
+text-align: center;
+font-family: 'Raleway', sans-serif;
+color: #dcdbe4;
+font-weight: normal;
+font-size: 28px;
+align-self: center;
+
+}
+.tapered_line{
+    grid-column: 1/-1;
+    grid-row: -2/-1;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(.25turn, #133368, #345593,#133368);
+    z-index: 2;
+    align-self: center;
+    justify-self: center;
+}
+.precinct_header{
+
+    color: azure;
+    font-family: 'Josefin Sans';
+    font-weight: lighter;
+    font-size: 20px;
+
+}
+
+// #133368
+// #345593
+// #2B47A7
+// #F93882
+// #FF746C
+// #00CAC6

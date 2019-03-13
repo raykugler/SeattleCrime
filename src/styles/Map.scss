@@ -1,0 +1,448 @@
+.map{
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+    height: 410px;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 101px 101px 101px 101px 79px;
+    align-self: center;
+   
+    width: 285px;
+    justify-self: center;
+}
+.map_img{
+    height: 100%;
+    width: auto;
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    justify-self: center;
+    align-items: center;
+}
+.map_labels{
+    position: absolute;
+    color: azure;
+    font-weight: bold;
+}
+.cls-1{
+
+    fill:rgb(52, 85, 147);
+}
+.cls-2{
+    fill:#2946a6;
+ 
+}
+
+.cls-3{
+    fill:#00c9c4;
+   
+}
+.cls-4{
+    fill:#f73680;
+ 
+}
+
+.cls-5{
+   fill:rgb(255, 116, 108);
+  
+}
+.cls-6{
+    fill:rgb(255, 116, 108);
+   
+ } 
+ .w_map_vector{
+
+    height: 100%;
+
+    bottom: 106px;
+    
+    right: 43px;
+
+}
+.in_precinct_hood_button{
+        font-family: 'Josefin Sans';
+        border: none;
+        background-color: aqua;
+        grid-column: 4/5;
+        grid-row: 1/-1;
+        border-right: 1px solid gray;
+        border-left: 1px solid gray;
+}
+.neighborhood_name{
+    font-family: 'Josefin Sans';
+    grid-column: 2/3;
+    grid-row: 1/-1;
+    text-align: center;
+
+}
+.neighborhood_holder{
+    height: 40px;
+    width: 260px;
+    background-color: beige;
+    position: relative;
+    display: grid;
+    grid-template-columns: 5px 145px 5px 70px 30px 5px;
+    grid-template-rows: 40px;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: -18px;
+}
+.all_precincts_button{
+    border: none;
+    position: absolute;
+    top: 380px;
+    margin-left: -160px;
+    font-family: 'Josefin Sans';
+    height: 24px;
+    width: 90px;
+    background-color: floralwhite;
+}
+.close_hood_button{
+    font-family: 'Josefin Sans';
+    grid-column: 5/7;
+    border: none;
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+#west_id{
+    height: 27%;
+    position: relative;
+
+}
+.sw_id{
+    height: 100%;
+}
+ .sw_map_vector{
+
+    height: 29%;
+    position: relative;
+    bottom: 548px;
+    left: 65px;
+    width: 23%;
+
+}
+#sw_hoods_id{
+    height: 60%;
+
+    margin-top: -22px;
+}
+.n_map_vector{
+    height: 30%;
+    position: relative;
+    
+}
+#north_id{
+    height: 100%;
+    // position: relative;
+    // left: 84px;
+    // top: 6px;
+}
+.e_map_vector{
+    height: 17%;
+    position: relative;
+    left: 24px;
+    bottom: 6px;
+}
+#east_id{
+    height: 100%;
+}
+#east_hoods_big_id{
+    height: 100%;
+}
+#east_hoods_id{
+    height: 73%;
+    position: relative;
+    left: -200px;
+    top: -32px;
+}
+.se_map_vector{
+    height: 34%;
+    position: relative;   
+    bottom: 423px;
+    left: 33px;
+    // z-index: 1;
+}
+#se_id{
+    height: 100%;
+}
+#south_hoods_id{
+    height: 93%;
+}
+.south_hoods{
+    height: 73%;
+}
+.north_hoods{
+
+    width: 80%;
+    margin-top: 25px;
+    margin-left: 30px;
+
+}
+.west_hoods{
+        height: 105%;
+        position: relative;
+
+}
+#west_hoods_id{
+        height: 70%;
+        position: relative;
+        margin-top: -30px;
+        right: 250px;
+}
+.sw_hoods{
+
+    height: 124%;
+  
+
+}
+.north_hoods_svg{
+    width: 122%;
+    margin-top: -170px;
+    margin-left: -30px;
+}
+.south_hoods_svg{
+    width: 122%;
+    margin-left: -30px;
+    margin-top: -20px;
+}
+.southwest_precinct{
+    position: relative;
+    right: 180px;
+    height: 60%;
+    margin-top: -20px;
+}
+.east_hood{
+    height: 75%;
+}
+.n_test{
+    margin-top: 5px;
+}
+.west_precinct{
+    height: 80%;
+}
+
+.w_map_grid_loc{
+ 
+
+}
+.e_map_grid_loc{
+ 
+}
+.sw_map_grid_loc{
+ }
+.se_map_grid_loc{
+ 
+}
+.n_map_grid_loc{
+ 
+}
+
+.northgate{
+    fill:#345593;
+}
+.lakecity{
+    fill: #F93882;
+}
+.roosevelt_ravenna{
+    fill: #2B47A7; 
+}
+.wallingford{
+    fill: #00CAC6;
+}
+.sandpoint{
+    fill: #00CAC6;    
+}
+
+.bitterlake{
+    fill: #00CAC6;
+}
+.greenwood{
+    fill: #F93882;
+}
+.phinney_ridge{
+    fill: #FF746C;
+}
+.university{
+    fill: #FF746C ;    
+}
+.ballard_north{
+    fill:#345593;
+}
+.ballard_south{
+    fill: #2B47A7;
+}
+.fremont{
+    fill: #F93882;
+}
+.map_background{
+    fill: #133368;
+}
+.east_precinct{
+    height: 80%;
+}
+.central_area_squire_park{
+    fill: #f93882;
+}
+.first_hill{
+    fill: #345593;
+}
+.capitol_hill{
+    fill: #FF746C;
+}
+.miller_park{
+    fill: #2B47A7;
+}
+.madrona_leschi{
+    fill: #FF746C;
+}
+.judkins_park_north_beacon_hill{
+    fill: #00CAC6;
+}
+.montlake_portage_bay{
+    fill: #345593;
+}
+.madison_park{
+    fill: #00CAC6;
+}
+.mount_baker{
+    fill: #2B47A7;
+}
+.genesee{
+    fill: #ff746c;
+}
+.lakewood_seward_park{
+    fill: #00CAC6;
+}
+.columbia_city{
+    fill: #f93882;
+}
+.hillman_city{
+    fill:#345593;
+}
+.brighton_dunlap{
+    fill: #FF746C;
+
+}
+.rainier_beach{
+    fill: #f93882;
+
+}
+.rainier_view{
+    fill:#345593;
+}
+.sodo{
+    fill:#345593;
+}
+#sw_id{
+    height: 100%;
+}
+.claremont_rainier_vista{
+    fill: #345593;
+}
+.new_holly{
+    fill: #f93882;
+}
+.north_beacon_hill{
+    fill:#ff746c;
+}
+.mid_beacon_hill{
+    fill:#00CAC6;
+}
+.south_beacon_hill{
+    fill: #2B47A7;
+}
+.georgetown{
+    fill:#ff746c;
+
+}
+.pioneer_square{
+    fill: #f93882;
+}
+.magnolia{
+    fill: #2B47A7;
+}
+.queen_anne{
+    fill:#ff746c;
+}
+.slu_cascade{
+    fill: #f93882;
+}
+.downtown_commercial{
+    fill:#ff746c;
+}
+.eastlake_west{
+    fill:#345593;
+}
+
+.belltown{
+    fill: #00CAC6;
+}
+.chinatown_international_district{
+    fill:#345593;
+}
+.high_point{
+    fill: #00CAC6;
+}
+.alki{
+    fill: #00c9c4;
+}
+.alaska_junction{
+    fill: #2946a6;
+}
+.south_park{
+    fill: #2B47A7;
+}
+.north_admiral{
+    fill: #FF746C;
+}
+.highland_park{
+    fill: #f73680;
+}
+.fauntleroy_sw{
+    fill: #2B47A7;
+}
+.morgan{ 
+    fill: #f93882;
+}
+.south_delridge{
+    fill: #2946a6;
+}
+
+.north_delridge{
+    fill: #345593;
+}
+.commercial_harbor_island{
+    fill: #00CAC6;
+}
+.commercial_duwamish{
+    fill: #f73680;
+}
+.pigeon_point{
+    fill: #FF746C;
+}
+.roxhill_westwood_arbor_heights{
+    fill: #FF746C;
+}
+
+// "CENTRAL AREA/SQUIRE PARK",
+//     "FIRST HILL",
+//     "CAPITOL HILL",
+//     "MILLER PARK",
+//     "MADRONA/LESCHI",
+//     "JUDKINS PARK/NORTH BEACON HILL",
+//     "MONTLAKE/PORTAGE BAY",
+//     "MADISON PARK"
+
+// "NORTHGATE",
+// "LAKECITY",
+// "ROOSEVELT/RAVENNA",
+// "WALLINGFORD",
+// "SANDPOINT",
+// "BITTERLAKE",
+// "GREENWOOD",
+// "PHINNEY RIDGE",
+// "UNIVERSITY",
+// "BALLARD NORTH",
+// "BALLARD SOUTH",
+// "FREMONT"
+    // '#345593', '#2B47A7', '#F93882', '#FF746C', '#00CAC6'

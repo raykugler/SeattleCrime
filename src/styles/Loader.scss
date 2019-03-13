@@ -1,0 +1,27 @@
+.loader{
+    margin-top: 30px;
+    width: 210px;
+    height: auto;
+    justify-items: center;
+   
+    background-color: #133368;
+    z-index: 5;
+}
+
+
+.load_text{
+
+    font-family: 'Josefin Sans';
+    font-size: 26px;
+    text-align: center;
+    font-family:'Raleway', sans-serif;
+    color: azure;
+  
+    margin-top: 150px;
+   
+
+}
+.data{
+    grid-column: 1/-1;
+    justify-self: center;
+}

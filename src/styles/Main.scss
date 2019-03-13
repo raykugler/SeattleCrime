@@ -1,0 +1,15 @@
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: #133368;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 60px 430px 300px 40px;
+}
+// grid-template-rows: 60px 270px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+// #133368
+// #345593
+// #2B47A7
+// #F93882
+// #FF746C
+// #00CAC6
