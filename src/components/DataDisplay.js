@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {test_run, date_sift, the_fetch, set_urls, the_second_fetch, fix_dates_here, date_picker} from './Data_Process';
+import {test_run, date_sift, the_fetch, set_urls, the_second_fetch, fix_dates_here, date_picker, second_date_sift} from './Data_Process';
 class DataDisplay extends Component{
     constructor(props){
         super(props)
@@ -13,8 +13,10 @@ class DataDisplay extends Component{
         second_end_date: 0,
           compare_data: [],
           first_dates: [],
-          second_dates:[],          
-        };
+          second_dates:[], 
+          top_sorted_data:[],
+          bottom_sorted_data:[],         
+        }; 
         
     }
  componentDidMount(){
@@ -41,7 +43,7 @@ if(url_array[1].length > 0){
 }
 else{
 
-    setTimeout(this.fix_dates_there,1000);
+    setTimeout(this.fix_dates_there,1500);
 }
 
 }
@@ -49,7 +51,7 @@ else{
 to_the_second_fetch=(url_array)=>{
    let c =  the_second_fetch(url_array);
    this.setState({bottom_data: c});
-   setTimeout(this.fix_dates_there, 1000);
+   setTimeout(this.fix_dates_there, 1500);
 
 
 }
@@ -186,9 +188,28 @@ this.show_data();
 
 show_data=()=>{
     let top_hoods_date_sorted = date_sift(this.props.top_chosen_array,this.state.top_data, this.state.first_dates,this.props.bottom_chosen_array,this.state.bottom_data, this.state.second_dates);
-
-    console.log(top_hoods_date_sorted);
+    this.setState({top_sorted_data: top_hoods_date_sorted});
+if(this.props.bottom_chosen_array.length === 0){
+    console.log('top sorted: ' + this.state.top_sorted_data)
 }
+else{
+    this.show_data_two();
+}
+}
+
+show_data_two=()=>{
+    let bottom_hoods_date_sorted = second_date_sift(this.props.bottom_chosen_array,this.state.bottom_data, this.state.second_dates);
+    this.setState({bottom_sorted_data: bottom_hoods_date_sorted});
+    console.log('top sorted: ' + this.state.top_sorted_data);
+    console.log('bottom sorted: ' + this.state.bottom_sorted_data);
+}
+
+// first_data_count = () => {
+//     for(let p = 0; p< arrayOfcrimes.length; p++){
+//         let spec_crime_count = 0;
+//         let specific_crime = arrayOfcrimes[p];
+//     }
+// }
 
 // show_one=()=>{
   
