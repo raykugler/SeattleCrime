@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {test_run, date_sift, the_fetch, set_urls, the_second_fetch, fix_dates_here, date_picker, second_date_sift} from './Data_Process';
+import { timeout } from 'q';
 class DataDisplay extends Component{
     constructor(props){
         super(props)
@@ -11,11 +12,18 @@ class DataDisplay extends Component{
         first_end_date: 0,
         second_start_date: 0,
         second_end_date: 0,
-          compare_data: [],
-          first_dates: [],
-          second_dates:[], 
-          top_sorted_data:[],
-          bottom_sorted_data:[],         
+        compare_data: [],
+        first_dates: [],
+        second_dates:[], 
+        top_sorted_data:[],
+        bottom_sorted_data:[],   
+        top_first_hood_data:[],
+        top_second_hood_data:[],        
+        top_third_hood_data:[],
+        bottom_first_hood_data:[],
+        bottom_second_hood_data:[],
+        bottom_third_hood_data:[],
+        top_array_of_crimes:[],
         }; 
         
     }
@@ -32,21 +40,225 @@ display_test=()=>{
 get_urls=()=>{
     let url_array = set_urls(this.props.top_chosen_array, this.props.bottom_chosen_array);
 
-    this.pull_data(url_array);
+    setTimeout(this.pull_one_data(url_array),300);
 }
 
-pull_data=(url_array)=>{
-     let b = the_fetch(url_array)
-     this.setState({top_data: b})
-if(url_array[1].length > 0){
-    this.to_the_second_fetch(url_array);
-}
-else{
+pull_one_data=(url_array)=>{
+    let url = url_array[0][0];
+    let top_length = this.props.top_chosen_array.length;
+ 
+    console.log('top_length: ' + top_length);
+    let first_hood_data = [];
 
-    setTimeout(this.fix_dates_there,1500);
+    let all_hoods_data = [];
+
+        fetch(url)
+        .then((resp) => resp.json()) // Transform the data into json
+        .then(function(data) {first_hood_data.push(data)
+                   
+
+        })
+        this.setState({top_first_hood_data: first_hood_data});
+    if(top_length > 1){
+            setTimeout(e=>this.pull_two_data(url_array), 400);
+
+    }
+    else{
+        setTimeout(e=>this.handle_bottom_data(url_array),400);
+    }
 }
 
+pull_two_data = (url_array)=>{
+    let url = url_array[0][1];
+    let top_length = this.props.top_chosen_array.length;
+    let second_hood_data = [];
+
+        fetch(url)
+        .then((resp) => resp.json()) // Transform the data into json
+        .then(function(data) {second_hood_data.push(data)
+     })
+
+     this.setState({top_second_hood_data: second_hood_data});
+    
+     if(top_length > 2){
+         setTimeout(e=>this.pull_three_data(url_array),400);
+     }
+     else{
+            setTimeout(this.handle_bottom_data(url_array),500);
+     }
 }
+
+pull_three_data =(url_array) =>{
+    let url = url_array[0][2];
+    let third_hood_data = [];
+    let top_length = this.props.top_chosen_array.length;
+        fetch(url)
+        .then((resp) => resp.json()) // Transform the data into json
+        .then(function(data) {third_hood_data.push(data)
+     })
+
+     this.setState({top_third_hood_data: third_hood_data});
+
+        setTimeout(e=>this.handle_bottom_data(url_array),500);
+}
+
+handle_bottom_data=(url_array)=>{
+    let top_one = this.state.top_first_hood_data;
+    let top_two = this.state.top_second_hood_data;
+    let top_third = this.state.top_third_hood_data;
+
+    let all_top_data=[];
+    all_top_data.push(top_one,top_two,top_third);
+    this.setState({top_data: all_top_data});
+    let bottom_length = this.props.bottom_chosen_array.length;
+    if(bottom_length === 0){
+        console.log('no bottom hoods');
+        setTimeout(e=>this.fix_dates_there(),100);
+    }
+
+    else{
+        setTimeout(e=>this.pull_bottom_one(url_array),200);
+    }
+}
+
+pull_bottom_one = (url_array) =>{
+    let url = url_array[1][0];
+    let bottom_first_data = [];
+    let bottom_length = this.props.bottom_chosen_array.length;
+    fetch(url)
+    .then((resp) => resp.json()) // Transform the data into json
+    .then(function(data) {bottom_first_data.push(data)
+ })
+
+    this.setState({bottom_first_hood_data: bottom_first_data});
+
+    if(bottom_length > 1){
+        setTimeout(e=>this.pull_bottom_two_data(url_array), 400);
+
+    }
+    else{
+    setTimeout(e=>this.present_data(),400);
+    }
+}
+
+pull_bottom_two_data = (url_array)=>{
+    let url = url_array[1][1];
+    let bottom_length = this.props.bottom_chosen_array.length;
+    let second_hood_data = [];
+
+    fetch(url)
+    .then((resp) => resp.json()) // Transform the data into json
+    .then(function(data) {second_hood_data.push(data)
+    })
+
+    this.setState({bottom_second_hood_data: second_hood_data});
+
+    if(bottom_length > 2){
+    setTimeout(e=>this.pull_bottom_three_data(url_array),400);
+    }
+    else{
+        setTimeout(this.present_data(),500);
+    }
+}
+
+pull_bottom_three_data =(url_array) =>{
+    let url = url_array[1][2];
+    let third_hood_data = [];
+    let bottom_length = this.props.top_chosen_array.length;
+    fetch(url)
+    .then((resp) => resp.json()) // Transform the data into json
+    .then(function(data) {third_hood_data.push(data)
+    })
+
+    this.setState({bottom_third_hood_data: third_hood_data});
+
+    setTimeout(e=>this.present_data(),500);
+    }
+
+present_data=()=>{
+    let all_top_data = [];
+    let all_bottom_data = [];
+        all_top_data.push(this.state.top_first_hood_data); 
+        all_top_data.push(this.state.top_second_hood_data);
+        all_top_data.push(this.state.top_third_hood_data);
+        all_bottom_data.push(this.state.bottom_first_hood_data);
+        all_bottom_data.push(this.state.bottom_second_hood_data);
+        all_bottom_data.push(this.state.bottom_third_hood_data);
+        console.log(all_top_data);
+        console.log(all_bottom_data);
+
+}
+
+first_date_sift=()=>{
+    let start_date = this.state.first_dates[0];
+    let end_date = this.state.first_dates[1];
+    let top_data = this.state.top_data;
+    let all_hood_crimes = [];
+    let big_crimes = [];
+    let crimes = [];
+    let first_length = this.props.top_chosen_array.length;
+   
+   console.log('start_date: ' + start_date);
+   console.log('end_date: ' + end_date);
+   console.log('top_data: ' + top_data);
+   console.log('first_length: ' + first_length);
+   
+     for (let t = 0; t < first_length; t++){      
+        console.log('top_data: ' + top_data[t][0][0].neighborhood);
+     
+        for(let h = 0; h < top_data[t][0].length; h++){
+            if(top_data[t][0][h].reported_date > start_date && top_data[t][0][h].reported_date < end_date){
+                crimes.push(top_data[t][0][h].crime_subcategory);
+          }
+          
+        }
+       
+    }
+    const set1 = new Set(crimes);
+    let arrayOfcrimes = Array.from(set1);
+    this.setState({top_array_of_crimes: arrayOfcrimes});  
+    setTimeout(e=>this.countFirst(),100);
+}
+
+countFirst=()=>{
+    let crime_list = this.state.top_array_of_crimes;
+
+    for(let i = 0; i < crime_list.length; i++){
+        let current_crime = crime_list[i]
+        console.log(current_crime);
+    }
+}
+    //         if(top_data[t][h].reported_date > start_date && top_data[t][h].reported_date < end_date){
+                
+    //           crimes.push(top_data[t][h].crime_subcategory);
+    //         }
+            
+    //     }
+    //     const settttt = new Set(crimes);
+    //     let arr = Array.from(settttt);
+    //     console.log('length: ' + arr.length);
+    //             }
+    //     const set1 = new Set(crimes);
+    //     let arrayOfcrimes = Array.from(set1);
+    //     if(this.props.bottom_chosen_array.length === 0){
+    //             console.log(arrayOfcrimes);
+    //     }
+    //     else{
+
+    //         // second_date_sift(bottom_length,bottom_data,bottom_dates, arrayOfcrimes);
+    //                 }
+
+
+//      this.setState({top_data: b})
+// if(url_array[1].length > 0){
+//     this.to_the_second_fetch(url_array);
+// }
+// else{
+
+//     setTimeout(this.fix_dates_there,1500);
+// }
+
+// }
 
 to_the_second_fetch=(url_array)=>{
    let c =  the_second_fetch(url_array);
@@ -61,6 +273,7 @@ fix_dates_there = () =>{
     let e = this.props.first_date_array;
     
     let g = this.props.bottom_chosen_array;
+    console.log('eeee' + e);
     console.log('gggg: ' + g);
     let first_start_date_array = [];
     let first_end_date_array = [];
@@ -114,7 +327,7 @@ if(g.length === 0){
     this.state.first_dates.push(final_first_start_date);
     this.state.first_dates.push(final_first_end_date);
     
-    this.show_data();
+    setTimeout(e=>this.first_date_sift(),100);
     
 }
 else{
@@ -187,8 +400,14 @@ this.show_data();
 
 
 show_data=()=>{
-    let top_hoods_date_sorted = date_sift(this.props.top_chosen_array,this.state.top_data, this.state.first_dates,this.props.bottom_chosen_array,this.state.bottom_data, this.state.second_dates);
-    this.setState({top_sorted_data: top_hoods_date_sorted});
+    console.log(this.state.top_data);
+    let first_length = this.props.top_chosen_array.length;
+    let second_length = this.props.bottom_chosen_array.length;
+    console.log('first_length: ' + first_length);
+    console.log('second_length: ' + second_length);
+
+    // let top_hoods_date_sorted = date_sift(first_length,this.state.top_data, this.state.first_dates,second_length,this.state.bottom_data, this.state.second_dates);
+    // this.setState({top_sorted_data: top_hoods_date_sorted});
 if(this.props.bottom_chosen_array.length === 0){
     console.log('top sorted: ' + this.state.top_sorted_data)
 }
@@ -198,10 +417,11 @@ else{
 }
 
 show_data_two=()=>{
-    let bottom_hoods_date_sorted = second_date_sift(this.props.bottom_chosen_array,this.state.bottom_data, this.state.second_dates);
-    this.setState({bottom_sorted_data: bottom_hoods_date_sorted});
-    console.log('top sorted: ' + this.state.top_sorted_data);
-    console.log('bottom sorted: ' + this.state.bottom_sorted_data);
+    // let bottom_hoods_date_sorted = second_date_sift(this.props.bottom_chosen_array,this.state.bottom_data, this.state.second_dates);
+    // this.setState({bottom_sorted_data: bottom_hoods_date_sorted});
+    // console.log('top sorted: ' + this.state.top_sorted_data);
+    // console.log('bottom sorted: ' + this.state.bottom_sorted_data);
+    console.log('show data two');
 }
 
 // first_data_count = () => {

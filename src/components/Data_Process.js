@@ -35,6 +35,7 @@ let first_hoods = all_url_array[0];
 let first_hoods_data = [];
 for(let i = 0; i< first_hoods.length; i++){
         let url = first_hoods[i];
+        console.log('url: ' + url);
 
         fetch(url)
   .then((resp) => resp.json()) // Transform the data into json
@@ -63,65 +64,64 @@ export const the_second_fetch=(all_url_array)=>{
     return(second_hoods_data);
 }
 
-export const date_sift=(top_chosen_array,top_data,top_dates, bottom_chosen_array)=>{
-    let start_date = top_dates[0];
-    let end_date = top_dates[1];
-    let all_hood_crimes = [];
-    let big_crimes = [];
-    let crimes = [];
+export const date_sift=(first_length,top_data,top_dates,bottom_length,bottom_data,bottom_dates)=>{
+    // let start_date = top_dates[0];
+    // let end_date = top_dates[1];
+    // let all_hood_crimes = [];
+    // let big_crimes = [];
+    // let crimes = [];
 
-    for (let t = 0; t < top_chosen_array.length; t++){    
-        let first_current = top_data[t];
-        for(let h = 0; h < first_current.length; h++){
-  
-            if(first_current[h].reported_date > start_date && first_current[h].reported_date < end_date){
+    // for (let t = 0; t < first_length; t++){      
+            
+    //     for(let h = 0; h < top_data[t].length; h++){
+           
+    //         if(top_data[t][h].reported_date > start_date && top_data[t][h].reported_date < end_date){
                 
-              crimes.push(top_data[t][h].crime_subcategory);
-            }
+    //           crimes.push(top_data[t][h].crime_subcategory);
+    //         }
             
-        }
-        const settttt = new Set(crimes);
-        let arr = Array.from(settttt);
-        console.log('length: ' + arr.length);
-                }
-        const set1 = new Set(crimes);
-        let arrayOfcrimes = Array.from(set1);
-        
-        
+    //     }
+    //     const settttt = new Set(crimes);
+    //     let arr = Array.from(settttt);
+    //     console.log('length: ' + arr.length);
+    //             }
+    //     const set1 = new Set(crimes);
+    //     let arrayOfcrimes = Array.from(set1);
+    //     if(bottom_chosen_array.length === 0){
+    //             return(arrayOfcrimes);
+    //     }
+    //     else{
 
-        
-        
-        if(bottom_chosen_array.length === 0){
-                return(arrayOfcrimes);
-        }
-
+    //         second_date_sift(bottom_length,bottom_data,bottom_dates, arrayOfcrimes);
+    //                 }
 }
-
-
                     
-export const second_date_sift = (bottom_chosen_array,bottom_data,bottom_dates)=>{  
-    let start_date = bottom_dates[0];
-    let end_date = bottom_dates[1];
-    let crimes_two =[];
+// export const second_date_sift = (bottom_length,bottom_data,bottom_dates, arrayOfcrimes)=>{
 
-                for (let t = 0; t < bottom_chosen_array.length; t++){      
+//     console.log(arrayOfcrimes); 
+//                    for (let t = 0; t < bottom_chosen_array.length; t++){      
             
-
-                for(let h = 0; h < bottom_data[t].length; h++){
+//                 console.log(bottom_data);
+//                 for(let h = 0; h < bottom_data[t].length; h++){
                    
-                    if(bottom_data[t][h].reported_date > start_date && bottom_data[t][h].reported_date < end_date){
+//                     if(bottom_data[t][h].reported_date > start_date && bottom_data[t][h].reported_date < end_date){
                         
-                      crimes_two.push(bottom_data[t][h].crime_subcategory);
-                    }
+//                       crimes.push(bottom_data[t][h].crime_subcategory);
+//                     }
                     
-                }
+//                 }
 
-                        }
-                const set2 = new Set(crimes_two);
-                let second_arrayOfcrimes = Array.from(set2);
-                return(second_arrayOfcrimes);
+//                         }
+//                 const set2 = new Set(crimes);
+//                 let second_arrayOfcrimes = Array.from(set2);
+//                 let arrays_of_crimes=[];
+//                 arrays_of_crimes.push('array one: ');
+//                 arrays_of_crimes.push(arrayOfcrimes);
+//                 arrays_of_crimes.push('array two: ');
+//                 arrays_of_crimes.push(second_arrayOfcrimes);
+//                 return(arrays_of_crimes);
 
-        }
+//         }
      
     
             //     const set1 = new Set(crimes);
