@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Calendar from 'react-calendar';
 
 const months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-const holders = ['row_1_column_1', 'row_1_column_2','row_2_column_1','row_2_column_2'];
-
 class SortScreen extends Component {
   constructor(props){
     super(props)

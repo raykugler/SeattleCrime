@@ -14,20 +14,6 @@ import SouthwestHoods from './SouthwestHoods';
 class SeattleMap extends Component {
   
 
-componentDidMount(){
-  console.log('gaaaaa');
-  // let north = document.getElementById('north_id');
-  // north.addEventListener('click',e => this.props.call_precinct_change('north') );
-  // let east = document.getElementById('east_id');
-  // east.addEventListener('click',e => this.props.call_precinct_change('east') );
-  // let southeast = document.getElementById('se_id');
-  // southeast.addEventListener('click',e => this.props.call_precinct_change('south') );
-  // let west = document.getElementById('west_id');
-  // west.addEventListener('click',e => this.props.call_precinct_change('west') );
-  // let southwest = document.getElementById('sw_id');
-  // southwest.addEventListener('click',e => this.props.call_precinct_change('southwest') );
-
-}
 
     render() {
       if(this.props.precinct_selected===''){

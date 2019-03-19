@@ -41,8 +41,6 @@ class NorthHoods extends Component {
   }
   hoodname=(e)=>{
 
-    let put_hood_here = document.getElementById('north_hoods_big_id');    
-  
     if (e.target !== e.currentTarget) {
 
         var clickedItem = e.target.id;

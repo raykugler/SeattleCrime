@@ -5,8 +5,6 @@ import HoodsHolder from './HoodsHolder';
 import DataDisplay from './DataDisplay';
 import SortScreen from './SortScreen';
 
-let hoods_ids =['north_hoods_id','east_hoods_id'];
-
 class Main extends Component {
     constructor(props){
         super(props)
@@ -72,7 +70,7 @@ top_bottom_switch=()=>{
   }   
 
   selecting_hood=(e,g,h)=>{
-    console.log('selecting_hood---e: ' + e + ' g: ' + g + ' h: ' + h );
+ 
     if(this.state.top_bottom === 'top' && this.state.top_chosen_array.includes(e)){
      
     }
@@ -94,7 +92,7 @@ top_bottom_switch=()=>{
     
     }
    
-    console.log('e: ' + e + ' g: ' + g + ' h: ' + h);
+
     this.place_hood(h,g)
   }
 
@@ -322,7 +320,7 @@ top_bottom_switch=()=>{
         let precinct_text = document.createTextNode(this.state.bottom_precincts[0]);
             precinct_loop_holder.appendChild(precinct_text);
 
-            one_hood_holder .appendChild(precinct_loop_holder);
+            one_hood_holder.appendChild(precinct_loop_holder);
             one_hood_holder.appendChild(remove_button);
             put_hoods_here.appendChild(one_hood_holder);
       
@@ -565,8 +563,7 @@ top_bottom_switch=()=>{
   
   }
   prep_data=(a,b,c,d,e,f,g,h)=>{
-    console.log('prep_data: ' + a + ' ' + b + ' ' + c + ' ' + d + ' ' + e + ' ' + f + ' ' + g + ' ' + h);
-          let top_chosen = this.state.top_chosen_array;
+
           let bottom_chosen = this.state.bottom_chosen_array;
 
           let first_dates = []
@@ -582,8 +579,7 @@ top_bottom_switch=()=>{
             this.setState({second_date_array: second_dates});
           this.change_to_data();
           }
-          console.log('top_chosen: ' + this.state.top_chosen_array);
-          console.log('bottom_chosen: ' + this.state.bottom_chosen_array);
+    
   }
   change_to_data=()=>{
     this.setState({screen: 'data_display'})

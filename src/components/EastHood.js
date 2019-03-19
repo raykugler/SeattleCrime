@@ -34,15 +34,11 @@ class EastHoods extends Component{
     }
   hoodname=(e)=>{
 
-        let put_hood_here = document.getElementById('east_hoods_big_id');    
-      
         if (e.target !== e.currentTarget) {
-
             var clickedItem = e.target.id;
             let regex = /_/gi;
             let name = clickedItem.replace(regex, ' ');
             let name_minus_id = name.substring(0, name.length - 3);
-
             this.props.selecting_hood(name_minus_id, 'east','east_hoods_id');
         }
         e.stopPropagation();

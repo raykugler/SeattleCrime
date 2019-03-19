@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import NeighborhoodMenu from './NeighborhoodMenu';
-import PrecinctMenu from './PrecinctMenu';
- 
+import NeighborhoodMenu from './NeighborhoodMenu'; 
 class HoodsHolder extends Component {
-  constructor(props){
-    super(props)
-  
-  }
+ 
 
 turn_on_neighborhood_maker=(e)=>{
   this.refs.neighborhood_menu.neighborhood_maker(e);
