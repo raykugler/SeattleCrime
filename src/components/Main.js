@@ -4,6 +4,7 @@ import MidHolder from './MidHolder';
 import HoodsHolder from './HoodsHolder';
 import DataDisplay from './DataDisplay';
 import SortScreen from './SortScreen';
+import Viz from './Viz';
 
 class Main extends Component {
     constructor(props){
@@ -13,7 +14,7 @@ class Main extends Component {
             bottom_chosen_array: [],
             merged_chosen_array: [],
             neighborhood_count: 0,
-            screen: 'navigation',
+            screen: 'graph',
             first_hood_data: [],
             second_hood_data: [],
             first_merged: [],
@@ -659,6 +660,14 @@ top_bottom_switch=()=>{
       bottom_chosen_array={this.state.bottom_chosen_array}
       top_precincts={this.state.top_precincts}
       bottom_precincts={this.state.bottom_precincts}/>
+      </main>
+    )
+  }
+  else if(this.state.screen === 'graph'){
+    return(
+      <main className='container'>
+      <Header />
+      <Viz />
       </main>
     )
   }

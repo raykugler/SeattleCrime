@@ -301,7 +301,7 @@ fix_dates_there = () =>{
 
     this.state.first_dates.push(final_first_start_date);
     this.state.first_dates.push(final_first_end_date); 
-    setTimeout(e=>this.first_date_sift(),100);
+    setTimeout(e=>this.first_date_sift(),400);
 }
 
 fix_second_dates = () => {
@@ -354,7 +354,7 @@ fix_second_dates = () => {
 
     this.state.second_dates.push(final_second_start_date);
     this.state.second_dates.push(final_second_end_date); 
-    setTimeout(e=>this.second_date_sift(),100);
+    setTimeout(e=>this.second_date_sift(),400);
 }
 first_date_sift=()=>{
     let start_date = this.state.first_dates[0];
