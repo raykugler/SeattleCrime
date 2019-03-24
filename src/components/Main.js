@@ -14,7 +14,7 @@ class Main extends Component {
             bottom_chosen_array: [],
             merged_chosen_array: [],
             neighborhood_count: 0,
-            screen: 'graph',
+            screen: 'navigation',
             first_hood_data: [],
             second_hood_data: [],
             first_merged: [],
@@ -26,12 +26,20 @@ class Main extends Component {
             bottom_precincts: [],
             first_date_array: [],
             second_date_array: [],  
+            first_finished: [],
+            second_finished:[],
     }
   }
   changeMidDisplay = (e) =>{
     this.setState({display: 'neighborhood'});
     this.setState({precinct: e});
     this.refs.hood_holder.turn_on_neighborhood_maker(e);
+   }
+display_viz =(e,f,g,h)=>{
+    this.setState({first_finished: g })
+    this.setState({second_finished: h});
+    this.setState({screen: 'viz'})
+
    }
 top_bottom_switch=()=>{
   let top_bottom_dot=document.getElementById('switch_id');
@@ -644,7 +652,7 @@ top_bottom_switch=()=>{
       screen_change = {this.screen_change}
       start_data_processing={this.props.start_data_processing}
       neighborhood_count ={this.state.neighborhood_count}
-             
+      display_viz = {this.display_viz}
       />
 
       </main>
@@ -663,11 +671,15 @@ top_bottom_switch=()=>{
       </main>
     )
   }
-  else if(this.state.screen === 'graph'){
+  else if(this.state.screen === 'viz'){
     return(
-      <main className='container'>
+      <main className='viz_container'>
       <Header />
-      <Viz />
+      <Viz 
+      first_finished={this.state.first_finished} 
+      second_finished={this.state.second_finished}
+      top_chosen_array={this.state.top_chosen_array}
+      bottom_chosen_array={this.state.bottom_chosen_array}/>
       </main>
     )
   }

@@ -1,0 +1,45 @@
+.table_button{
+    width: 35px;
+    height: auto;
+    grid-column: 2/3;
+    align-self: center;
+    opacity: .5;
+}
+
+.pie_button{
+    width: 35px;
+    height: auto;
+    grid-column: 4/5;
+    align-self: center;
+    opacity: .5;
+}
+.bar_button{
+    width: 35px;
+    height: auto;
+    grid-column: 6/7;
+    align-self: center;
+    opacity: .5;
+}
+.viz_holder{
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+    
+    display: grid;
+    grid-template-columns: 15px 330px 15px;
+    grid-template-rows: 45px 1fr 1fr;
+    justify-self: center;
+}
+.viz_nav{
+    grid-column: 2/-2;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 30px 35px 30px 35px 30px 35px 30px;
+    justify-self: center;
+}
+.viz_container{
+        width: 100vw;
+        background-color: #133368;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 60px 430px 300px 40px;
+}
