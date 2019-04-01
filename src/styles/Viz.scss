@@ -26,7 +26,7 @@
     
     display: grid;
     grid-template-columns: 15px 330px 15px;
-    grid-template-rows: 45px 1fr 1fr;
+    grid-template-rows: 45px 100px 1fr;
     justify-self: center;
 }
 .viz_nav{
@@ -42,4 +42,9 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 60px 430px 300px 40px;
+}
+.table{
+    grid-row: 2/4;
+    grid-column: 2/-2;
+    margin-top: 15px;
 }

@@ -118,7 +118,7 @@ top_bottom_switch=()=>{
             let blank_text_p = document.createElement('P');
                 blank_text_p.setAttribute('class', 'hood_name');
                 blank_text_p.setAttribute('id', 'first_hood_name');
-            let blank_text = document.createTextNode('Place Up to Three Neighborhoods Here');
+            let blank_text = document.createTextNode('Merge Up to Three Neighborhoods Here');
                 blank_text_p.appendChild(blank_text);
                 blank_text_here.appendChild(blank_text_p);
 
@@ -301,7 +301,7 @@ top_bottom_switch=()=>{
        let blank_text_p = document.createElement('P');
            blank_text_p.setAttribute('class', 'hood_name');
            blank_text_p.setAttribute('id', 'second_hood_name');
-       let blank_text = document.createTextNode('Place Up to Three Neighborhoods Here');
+       let blank_text = document.createTextNode('Merge Up to Three Neighborhoods Here');
            blank_text_p.appendChild(blank_text);
            blank_text_here.appendChild(blank_text_p);
 

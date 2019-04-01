@@ -80,12 +80,7 @@
     align-content: center;
 }
 
-.single_hood_name{
-    grid-column: 1/2;
-    text-align: center;
-    font-size: 13px;
-    font-family: 'Josefin Sans';
-}
+
 .switch_holder {
     grid-column: 1/2;
     grid-row: 1/-1;
@@ -172,8 +167,8 @@ opacity: .6;
 }
 .top_one_name_of_two{
     grid-column: 1/2;
-    margin: 3px;
-    font-size: 12px;
+    margin: 6px;
+    font-size: 13px;
     text-align: center;
 }
 
@@ -188,7 +183,7 @@ opacity: .6;
     grid-column: 1/2;
     margin: 3px;
     text-align: center;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 
@@ -220,7 +215,7 @@ opacity: .6;
 .top_one_name_of_three{
     grid-column: 1/2;
     margin: 3px;
-    font-size: 12px;
+    font-size: 13px;
     text-align: center;
 }
 
@@ -235,7 +230,7 @@ opacity: .6;
     grid-column: 1/2;
     margin: 3px;
     text-align: center;
-    font-size: 12px;
+    font-size: 13px;
     border-bottom: 1px solid rgba(0,0,0,.7);
 }
 .three_of_three_hood_holder{
@@ -249,7 +244,7 @@ opacity: .6;
     grid-column: 1/2;
     margin: 3px;
     text-align: center;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .bottom_two_hood_holder{

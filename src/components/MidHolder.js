@@ -119,7 +119,7 @@ this.setState({midholder_display: 'sortscreen'})
          
           <div className='first_selected_hood_button' id='first_selected_hood_button_id'>
          
-          <p className='hood_name' id='first_hood_name'>Place Up to Three Neighborhoods Here</p>
+          <p className='hood_name' id='first_hood_name'>Merge Up to Three Neighborhoods Here</p>
          
           </div>
          
@@ -131,7 +131,7 @@ this.setState({midholder_display: 'sortscreen'})
             
             <button className='compare' id='compare_id' onClick={e=> this.props.set_dates('compare')}>Compare</button>
           </nav>
-          <div className='second_selected_hood_button' id='second_selected_hood_button_id'><p className='hood_name' id='second_hood_name'>Place Up to Three Neighborhoods Here</p></div>
+          <div className='second_selected_hood_button' id='second_selected_hood_button_id'><p className='hood_name' id='second_hood_name'>Merge Up to Three Neighborhoods Here</p></div>
           </nav>
             <div className='tapered_line_mid'></div>
            
